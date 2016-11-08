@@ -1,17 +1,6 @@
 require 'active_support/core_ext/array/conversions'
 require 'time'
 
-# Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
-
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
-
-set :markdown_engine, :redcarpet
-
 set :haml, remove_whitespace: true
 
 activate :directory_indexes
