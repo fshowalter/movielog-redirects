@@ -19,6 +19,7 @@ activate :directory_indexes
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.build_before = true
+  deploy.clean = true
 end
 
 # Build-specific configuration
