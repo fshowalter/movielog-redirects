@@ -36,3 +36,22 @@ ready do
     proxy("#{old_slug}.html", 'redirect.html', layout: false, locals: { new_slug: new_slug }, ignore: true)
   end
 end
+
+#
+# Opened to fix build deleting the .git directory.
+#
+class Middleman::Cli::BuildAction < ::Thor::Actions::EmptyDirectory # rubocop:disable Style/ClassAndModuleChildren
+  # Remove files which were not built in this cycle
+  # @return [void]
+  def clean!
+    @to_clean.each do |f|
+      base.remove_file(f, force: true) unless f =~ /\.git/
+    end
+
+    ::Middleman::Util.glob_directory(@build_dir.join('**', '*'))
+                     .select { |d| File.directory?(d) }
+                     .each do |d|
+      base.remove_file d, force: true if directory_empty? d
+    end
+  end
+end
