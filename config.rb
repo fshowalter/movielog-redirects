@@ -5,6 +5,8 @@ set :haml, remove_whitespace: true
 
 activate :directory_indexes
 
+page '/googlee90f4c89e6c3d418.html', directory_index: false
+
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.build_before = true
