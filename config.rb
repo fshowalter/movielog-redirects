@@ -25,11 +25,13 @@ end
 
 ready do
   [
+    ['index', ''],
     ['movies/curse-of-the-demon-1957', 'reviews/curse-of-the-demon-1958/'],
     ['movies/riders-of-destiny-1933', 'reviews/riders-of-destiny-1933/'],
     ['movies/curse-of-the-crimson-altar-1968', 'reviews/curse-of-the-crimson-altar-1968/'],
     ['movies/the-road-to-singapore-1931', 'reviews/the-road-to-singapore-1931/'],
-    ['movies/black-legion-1937', 'reviews/black-legion-1937/']
+    ['movies/black-legion-1937', 'reviews/black-legion-1937/'],
+    ['movies/sagebrush-trail-1933', 'reviews/sagebrush-trail-1933/']
   ].each do |redirect|
     old_slug, new_slug = redirect
     proxy("#{old_slug}.html", 'redirect.html', layout: false, locals: { new_slug: new_slug }, ignore: true)
