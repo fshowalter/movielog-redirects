@@ -31,6 +31,7 @@ ready do
     ['movies/curse-of-the-crimson-altar-1968', 'reviews/curse-of-the-crimson-altar-1968/'],
     ['movies/the-road-to-singapore-1931', 'reviews/the-road-to-singapore-1931/'],
     ['movies/black-legion-1937', 'reviews/black-legion-1937/'],
+    ['movies/straw-dogs-1971', 'reviews/straw-dogs-1971/'],
     ['movies/sagebrush-trail-1933', 'reviews/sagebrush-trail-1933/']
   ].each do |redirect|
     old_slug, new_slug = redirect
