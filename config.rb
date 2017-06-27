@@ -34,7 +34,8 @@ ready do
     ['movies/straw-dogs-1971', 'reviews/straw-dogs-1971/'],
     ['movies/sagebrush-trail-1933', 'reviews/sagebrush-trail-1933/'],
     ['movies/men-are-such-fools-1938', 'reviews/men-are-such-fools-1938/'],
-    ['movies/the-ghoul-1933', 'reviews/the-ghoul-1933/']
+    ['movies/the-ghoul-1933', 'reviews/the-ghoul-1933/'],
+    ['movies/his-private-secretary-1933', 'reviews/his-private-secretary-1933/']
   ].each do |redirect|
     old_slug, new_slug = redirect
     proxy("#{old_slug}.html", 'redirect.html', layout: false, locals: { new_slug: new_slug }, ignore: true)
